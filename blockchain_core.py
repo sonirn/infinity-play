@@ -112,6 +112,7 @@ class Block:
         return mining_time
         class Blockchain:
     def __init__(self):
+        pass
         self.chain = []
         self.difficulty = 4
         self.pending_transactions = []
