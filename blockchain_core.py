@@ -112,7 +112,6 @@ class Block:
         return mining_time
         class Blockchain:
     def __init__(self):
-        pass
         self.chain = []
         self.difficulty = 4
         self.pending_transactions = []
@@ -128,6 +127,8 @@ class Block:
         genesis_block = Block(0, [], datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "0")
         genesis_block.hash = genesis_block.calculate_hash()
         self.chain.append(genesis_block)
+
+    # Rest of the Blockchain methods follow with proper indentation...
     
     def adjust_difficulty(self):
         """Dynamically adjust mining difficulty to maintain target block time"""
