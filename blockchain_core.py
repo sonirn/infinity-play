@@ -104,29 +104,30 @@ class Block:
             self.nonce += 1
             self.hash = self.calculate_hash()
             
-            # Prevent infinite loops and allow for difficulty adjustment
             if self.nonce > max_nonce:
                 return False
                 
         mining_time = time.time() - start_time
         return mining_time
-        class Blockchain:
+
+# Properly dedented Blockchain class
+class Blockchain:
     def __init__(self):
         self.chain = []
         self.difficulty = 4
         self.pending_transactions = []
         self.mining_reward = 10
-        self.target_block_time = 60  # Target 60 seconds per block
-        self.difficulty_adjustment_interval = 10  # Adjust difficulty every 10 blocks
-        
-        # Create genesis block
+        self.target_block_time = 60
+        self.difficulty_adjustment_interval = 10
         self.create_genesis_block()
-    
+
     def create_genesis_block(self):
         """Create the first block in the chain"""
         genesis_block = Block(0, [], datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "0")
         genesis_block.hash = genesis_block.calculate_hash()
         self.chain.append(genesis_block)
+
+    # ... rest of Blockchain methods ...
 
     # Rest of the Blockchain methods follow with proper indentation...
     
